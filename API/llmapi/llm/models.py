@@ -11,6 +11,12 @@ class NewSite(models.Model):
     def __str__(self):
         return self.link
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)  
+
+    def __str__(self):
+        return self.name
+
 class RssData(models.Model):
     title = models.TextField()  
     link = models.URLField(max_length=200)  
@@ -19,11 +25,9 @@ class RssData(models.Model):
     country = models.CharField(max_length=100)  
     image = models.JSONField()
     summary = models.TextField()
+    categories = models.ManyToManyField(Category, related_name="articles")  
+
+
     def __str__(self):
         return self.title
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)  
-
-    def __str__(self):
-        return self.name
