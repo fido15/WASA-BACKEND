@@ -1,0 +1,11 @@
+djangorestframework
+googlesearch-python
+langchain-ollama
+langchain-core
+django-debug-toolbar
+pytest-django
+black
+isort
+
+feedparser
+langchain
