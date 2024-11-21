@@ -15,10 +15,10 @@ class RAGModel:
     
 
     prompt = PromptTemplate(
-        template=Prompt,
+        template=self.Prompt,
         input_variables=["question", "documents"]
     )
-    formatted_prompt = prompt.format(question=question, documents=documents)
+    formatted_prompt = prompt.format(question=self.question, documents=self.documents)
     
     llm = ChatOllama(
         model="llama3.1",
